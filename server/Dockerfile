@@ -1,5 +1,5 @@
 FROM node:trixie-slim
 WORKDIR /server
-COPY / /server/
-ENTRYPOINT [ 'npm', "install" ]
-RUN npm start
+COPY . /server/
+RUN npm install
+CMD [ "npm", "start" ]

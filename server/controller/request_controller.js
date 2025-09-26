@@ -12,7 +12,7 @@ export let getRequests = async (req, res) => {
 export let getOneRequest = async (req, res) => {
     try {
         const { id } = req.params
-        const data = await postgres.query('SELECT * FROM request where id = $1',[id])
+        const data = await postgres.query('SELECT * FROM request where id = $1', [id])
         res.status(200).json(data.rows)
     } catch (err) {
         res.status(500).json({ error: err.message })
